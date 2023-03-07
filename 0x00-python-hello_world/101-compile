@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+from os import environ
+from py_compile import compile
+compile(environ["PYFILE"], environ["PYFILE"] + "c")
