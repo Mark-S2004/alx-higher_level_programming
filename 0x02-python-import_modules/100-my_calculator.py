@@ -7,9 +7,9 @@ if __name__ == "__main__":
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
-    operation = {'+': a+b, '-': a-b, '*': a*b, '/': a/b}
+    operation = {'+': add, '-': sub, '*': mul, '/': div}
     result = operation.get(argv[2], None)
     if not result:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    print(f"{a} {argv[2]} {b} = {result}")
+    print(f"{a} {argv[2]} {b} = {result(a, b)}")
