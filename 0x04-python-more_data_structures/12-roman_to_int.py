@@ -7,8 +7,11 @@ def roman_to_int(roman_string):
     num = 0
     previous_roman = 'I'
     for roman_num in roman_string[::-1]:
+        if roman_num not in list(roman_values):
+            return 0
         if roman_values[previous_roman] > roman_values[roman_num]:
             num -= roman_values[roman_num]
-        num += roman_values[roman_num]
+        else:
+            num += roman_values[roman_num]
         previous_num = roman_num
     return num
