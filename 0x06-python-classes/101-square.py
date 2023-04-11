@@ -20,7 +20,7 @@ class Square:
         """
         self.size = size
         self.position = position
-    
+
     def __str__(self):
         """Return string of the square represented by '#'."""
         string = ""
