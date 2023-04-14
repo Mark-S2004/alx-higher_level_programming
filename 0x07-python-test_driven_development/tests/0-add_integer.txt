@@ -42,3 +42,37 @@ Must return an integer
 
     >>> add_integer(30.2, 2.2)
     32
+
+One argument is passed only
+
+::
+
+    >>> add_integer(2)
+    100
+
+No arguments is passed
+
+::
+
+    >>> add_integer() # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+A large float is passed as argument
+
+::
+
+    >>> add_integer(1e309) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    OverflowError: ...
+
+Float NaN passed as argument
+
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
