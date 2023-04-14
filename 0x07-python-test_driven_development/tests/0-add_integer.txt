@@ -1,0 +1,44 @@
+The ``0-add_integer`` module
+=============================
+
+Using ``add_integer``
+----------------------
+
+``add_integer(a, b=98)`` is a function that adds to integers passed to it as arguments
+
+::
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+    >>> add_integer(2, 3)
+    5
+
+`a` and `b` must be integers or floats
+
+::
+
+    >>> add_integer("hi", 2) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    >>> add_integer(2, [2, 3, 4])# doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+    >>> add_integer(True, {2, 4, 6}) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Must return an integer
+
+::
+
+    >>> type(add_integer(20, 47))
+    <class 'int'>
+
+`a` and `b` should be casted to integers to return an integer
+
+::
+
+    >>> add_integer(30.2, 2.2)
+    32
